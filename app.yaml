@@ -1,5 +1,6 @@
 runtime: python38
 
+# start app on specified port (in our case 8080)
 entrypoint: gunicorn -b :$PORT app:app
 
 handlers:
