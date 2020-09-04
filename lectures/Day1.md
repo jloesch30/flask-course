@@ -15,4 +15,7 @@ Today we will cover =>
 
 Objectives for you
 1. Create skeleton web app
-2. create models for DB using mongo engine
+
+
+meeting wednesday and Friday
+
