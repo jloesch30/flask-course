@@ -12,7 +12,7 @@ def index():
         user = auth.create_user_with_email_and_password(email, password)
         session['user'] = user
         print(session)
-        return redirect(url_for('users.signout', user=user))
+        return redirect(url_for('users.signout'))
     else:
         return render_template("index.html")
 
