@@ -1,21 +1,11 @@
-from flask import Blueprint, redirect, url_for, render_template, request, session
-from myapp import auth, firebase
+from flask import Blueprint, redirect, url_for, render_template, request
 
 main = Blueprint('main', __name__)
 
-@main.route('/', methods=['POST', 'GET'])
+@main.route('/', methods=['GET'])
 def index():
-    if request.method == "POST":
-        email = request.form['email']
-        password = request.form['password']
+    return redirect(url_for('main.login'))
 
-        user = auth.create_user_with_email_and_password(email, password)
-        session['user'] = user
-        print(session)
-        return redirect(url_for('users.signout'))
-    else:
-        return render_template("index.html")
-
-@main.route('/home')
-def home():
-    return "welcome to the homepage"
+@main.route('/login',methods=['GET', 'POST'])
+def login():
+    return render_template('index.html')
