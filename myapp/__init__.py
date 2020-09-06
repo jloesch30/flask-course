@@ -4,19 +4,19 @@ import pyrebase
 
 import secrets
 
-# config = {
-#     "apiKey": "AIzaSyD7MhevIYaHPQJGfK7ou9Ny2pqWQhjhfBw",
-#     "authDomain": "flaskcourse.firebaseapp.com",
-#     "databaseURL": "https://flaskcourse.firebaseio.com",
-#     "projectId": "flaskcourse",
-#     "storageBucket": "flaskcourse.appspot.com",
-#     "messagingSenderId": "694661421387",
-#     "appId": "1:694661421387:web:9d6630557ff3401f5df0ce",
-#     "measurementId": "G-4KFNC0M75M"
-# }
+config = {
+    "apiKey": "AIzaSyD7MhevIYaHPQJGfK7ou9Ny2pqWQhjhfBw",
+    "authDomain": "flaskcourse.firebaseapp.com",
+    "databaseURL": "https://flaskcourse.firebaseio.com",
+    "projectId": "flaskcourse",
+    "storageBucket": "flaskcourse.appspot.com",
+    "messagingSenderId": "694661421387",
+    "appId": "1:694661421387:web:9d6630557ff3401f5df0ce",
+    "measurementId": "G-4KFNC0M75M"
+}
 
-# firebase = pyrebase.initialize_app(config)
-# auth = firebase.auth()
+firebase = pyrebase.initialize_app(config)
+auth = firebase.auth()
 
 def create_app():
     app = Flask(__name__)

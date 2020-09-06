@@ -4,8 +4,8 @@ main = Blueprint('main', __name__)
 
 @main.route('/', methods=['GET'])
 def index():
-    return redirect(url_for('main.login'))
+    return redirect(url_for('users.login'))
 
-@main.route('/login',methods=['GET', 'POST'])
-def login():
-    return render_template('index.html')
+@main.route('/home',methods=['GET', 'POST'])
+def home(name):
+    return f'User was made {name}'

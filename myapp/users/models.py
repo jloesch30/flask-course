@@ -1,6 +1,6 @@
-
+from mongoengine import *
 from mongoengine.fields import BooleanField, DateTimeField, EmailField, ListField, StringField
-import datetime
+from datetime import datetime
 
 class User(Document):
     email = EmailField()
