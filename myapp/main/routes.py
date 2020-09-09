@@ -4,8 +4,10 @@ main = Blueprint('main', __name__)
 
 @main.route('/', methods=['GET'])
 def index():
-    return redirect(url_for('main.login'))
+    return redirect(url_for('users.login'))
 
-@main.route('/login',methods=['GET', 'POST'])
-def login():
-    return render_template('index.html')
+# how to pass variables
+# @main.route('/home') # we can add extra decorators on the web page
+@main.route('/home/<string:fname>', methods=['GET'])
+def home(fname=None):
+    return render_template('home.html', fname=fname)
