@@ -15,6 +15,7 @@ def login():
         fname = request.form.get('fname')
         session['fname'] = fname
         try:
+            # pyrbase info below
             user = auth.sign_in_with_email_and_password(email, password)
             session['signed-in'] = True
         except Exception:
@@ -22,14 +23,17 @@ def login():
             session['signed-in'] = True
             # Check if user exists
             try: 
+                # mongoDB // mongoengine
                 user = User.objects(email=email).get()
                 print('User found')
             except Exception as e:
+                # get new_user
                 new_user = create_user(fname, email)
+                # .save()
                 new_user.save()
                 print('New user created')
 
-        return redirect(url_for('main.home', fname=fname))
+        return redirect(url_for('main.home', fname=fname,))
     else:
         return render_template("index.html")
 

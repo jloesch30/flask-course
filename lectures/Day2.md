@@ -3,8 +3,8 @@ Hi everyone, welcome to session 2. The back end portion will be slightly shorter
 valuable information.
 
 ### Agenda
-* [ ] sending information across routes
-* [ ] Sending information to templates
-* [ ] Pyrebase setup
-* [ ] Login user
-* [ ] Models
+* [X] sending information across routes
+* [X] Sending information to templates
+* [x] Pyrebase setup
+* [x] Login user
+* [x] Models
