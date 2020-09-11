@@ -8,6 +8,16 @@
     <title>Tutorial</title>
 </head>
 <body>
-    <p>Welcome to the turtorial!</p>
+    <p>Welcome {{ fname }}!</p>
+    <div>
+        <a href="{{ url_for('reports.makeReport') }}">
+            <button type="submit">Make report page</button>
+        </a>
+    </div>
+    <div>
+        <a href="{{ url_for('themes.makeTheme') }}">
+            <button type="submit">Make theme page</button>
+        </a>
+    </div>
 </body>
 </html>

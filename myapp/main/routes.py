@@ -1,12 +1,13 @@
-from flask import Blueprint, redirect, url_for
+from flask import Blueprint, redirect, url_for, render_template, request
 
 main = Blueprint('main', __name__)
 
-
-@main.route('/')
+@main.route('/', methods=['GET'])
 def index():
-    return redirect(url_for('main.home'))
+    return redirect(url_for('users.login'))
 
-@main.route('/home')
-def home():
-    return "welcome to the homepage"
+# how to pass variables
+# @main.route('/home') # we can add extra decorators on the web page
+@main.route('/home/<string:fname>', methods=['GET'])
+def home(fname=None):
+    return render_template('home.html', fname=fname)

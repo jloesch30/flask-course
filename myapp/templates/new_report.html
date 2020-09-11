@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+{% block title %}
+    <title>New Report</title>
+{% endblock title %}
+
+{% block body %}
+    <body>
+        <h1>Make new report here</h1>
+        <form action="{{ url_for('reports.makeReport') }}" method="post">
+            <input type="text" name="title" placeholder="title">
+            <div>
+                <select name="themes" class="custom-select mb-3">
+                    <option selected>Select from themes</option>
+                    <option value="Restaurant">Restaurant</option>
+                    <option value="Grocery Store">Grocery store</option>
+                </select>
+            </div>
+            <div>
+                <textarea name="summary" id="summary" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+                <select name="report_tags" class="custom-select mb-3" multiple="multiple">
+                    <option value="Mask">Mask</option>
+                    <option value="Hand_Sanitizer">Hand_Sanitizer</option>
+                    <option value="Distancing">Distancing</option>
+                    <option value="Crowded">Crowded</option>
+                    <option value="Clean">Clean</option>
+                    <option value="Dirty">Dirty</option>
+                    <option value="Curbside">Curbside</option>
+                    <option value="Safe">Safe</option>
+                    <option value="Unsafe">Unsafe</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit">Done</button>
+            </div>
+        </form>
+        <br>
+        <br>
+        <div>
+            {% if reports %}
+                {% for report in reports %}
+                <h4> {{ report.title }} </h4>
+                <p> {{ report.summary }} </p>
+                <p> {{ report.theme.theme_name }}</p>
+                <p> {{ report.report_tags }} </p>
+                <p> {{ report.author.fname }} </p>
+                {% endfor %}
+            {% else %}
+                <p>No Items</p>
+            {% endif %}
+        </div>
+    </body>
+{% endblock body %}

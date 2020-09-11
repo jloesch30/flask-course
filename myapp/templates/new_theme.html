@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Theme</title>
+</head>
+<body>
+    <h1>Make new report here</h1>
+    <form action="{{ url_for('themes.makeTheme') }}" method="post">
+        <input type="text" name="title" placeholder="title">
+        <div>
+            <input type="text" name="text" id="text" placeholder="theme name">
+        </div>
+        <div>
+            <textarea name="theme_desc" id="theme_desc" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <button type="submit">Done</button>
+        </div>
+    </form>
+</body>
+</html>
