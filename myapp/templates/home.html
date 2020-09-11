@@ -9,5 +9,8 @@
 </head>
 <body>
     <p>Welcome {{ fname }}!</p>
+    <a href="{{ url_for('reports.makeReport') }}">
+        <button type="submit">Make report page</button>
+    </a>
 </body>
 </html>

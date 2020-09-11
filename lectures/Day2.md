@@ -8,3 +8,8 @@ valuable information.
 * [x] Pyrebase setup
 * [x] Login user
 * [x] Models
+
+
+### My notes
+- Vennela went over blocks in Jinja
+- 

@@ -14,6 +14,7 @@ def login():
         password = request.form.get('password')
         fname = request.form.get('fname')
         session['fname'] = fname
+        session['email'] = email
         try:
             # pyrbase info below
             user = auth.sign_in_with_email_and_password(email, password)
