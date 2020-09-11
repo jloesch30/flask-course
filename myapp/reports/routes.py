@@ -1,5 +1,5 @@
 from flask import Blueprint, request, redirect, url_for, render_template
-from .utils import make_report
+from .utils import make_report, get_user_reports
 
 reports = Blueprint('reports', __name__, url_prefix='/report')
 
@@ -15,7 +15,12 @@ def makeReport():
 
         if new_report:
             new_report.save()
-        return render_template('new_report.html')
+
+        # user report as a list
+        user_reports = get_user_reports()
+
+        return render_template('new_report.html', reports=user_reports)
     else:
-        return render_template('new_report.html')
+        user_reports = get_user_reports()
+        return render_template('new_report.html', reports=user_reports)
         

@@ -9,13 +9,11 @@ def makeTheme():
     if request.method == 'POST':
         # capture report data
         title = request.form.get('title')
-        theme_name = request.form.get('theme')
-        summary = request.form.get('summary')
-        report_tags = request.form.getlist('report_tags')
-        new_report = make_theme()
+        # TODO
+        new_theme = make_theme()
 
-        if new_report:
-            new_report.save()
+        if new_theme:
+            new_theme.save()
         return render_template('new_theme.html')
     else:
         return render_template('new_theme.html')

@@ -22,3 +22,12 @@ def make_report(title, theme_name, summary, report_tags):
         new_report = None
         
     return new_report
+
+def get_user_reports():
+    current_user = get_user()
+    try:
+        reports = Report.objects(author=current_user.id)
+    except Exception as e:
+        print(str(e))
+        reports = None
+    return reports

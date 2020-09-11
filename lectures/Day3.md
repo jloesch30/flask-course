@@ -1,9 +1,10 @@
 # Welcome to session 3
 
 ### Agenda
-* [ ] Make report model
+* [x] Make report model
 * [ ] make theme model
-* [ ] how to relate reports and themes to user
-* [ ] how to access report and theme data
+* [x] how to relate reports and themes to user
 * [ ] how to send data to front end
+* [ ] how to access report and theme data
+
 

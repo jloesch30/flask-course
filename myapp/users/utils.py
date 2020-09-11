@@ -18,6 +18,7 @@ def create_user(fname, email):
 def get_user():
     email = session['email']
     try:
+        # returns a User object
         user = User.objects(email=email).get()
     except Exception as e:
         print(str(e))
