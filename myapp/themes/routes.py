@@ -1,5 +1,6 @@
 from flask import Blueprint, request, render_template
 from .utils import make_theme
+
 themes = Blueprint('themes', __name__, url_prefix='/theme')
 
 # TODO: in class
@@ -11,7 +12,7 @@ def makeTheme():
         theme_name = request.form.get('theme')
         summary = request.form.get('summary')
         report_tags = request.form.getlist('report_tags')
-        new_report = make_theme(title, theme_name, summary, report_tags)
+        new_report = make_theme()
 
         if new_report:
             new_report.save()
